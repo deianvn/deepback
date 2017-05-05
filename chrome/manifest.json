@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+
+    "name": "Deep Back",
+    "description": "This extension gives ability to go back by skiping all pages from the current web site.",
+    "version": "1.0",
+    "background": { "scripts": ["deepback.js"] },
+
+    "browser_action": {
+    },
+
+    "permissions": [
+        "tabs",
+        "notifications",
+        "history",
+        "http://*/*",
+        "https://*/*"
+    ]
+}
