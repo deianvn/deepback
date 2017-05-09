@@ -18,7 +18,6 @@ chrome.webNavigation.onCommitted.addListener(function (data) {
                 tabHistory.unshift(data.url);
                 var storeObject = {};
                 storeObject[key] = tabHistory;
-                console.log("ADD: " + data.url);
                 chrome.storage.local.set(storeObject);
             });
         }
@@ -60,6 +59,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
             });
         }
     });
+});
+
+chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
+    chrome.storage.local.remove(PREFIX + tabId);
 });
 
 function urlToDomain(url) {
