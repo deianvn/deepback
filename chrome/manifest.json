@@ -12,6 +12,8 @@
     "permissions": [
         "tabs",
         "notifications",
+        "webNavigation",
+        "storage",
         "history",
         "http://*/*",
         "https://*/*"
